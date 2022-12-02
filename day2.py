@@ -19,21 +19,21 @@
 # The third round is a draw with both players choosing Scissors, giving you a score of 3 + 3 = 6.
 # In this example, if you were to follow the strategy guide, you would get a total score of 15 (8 + 1 + 6).
 
-puntos = {
+points = {
     "A": {"X": 1+3,"Y": 2+6, "Z": 3+0}, 
     "B": {"X": 1+0,"Y": 2+3, "Z": 3+6}, 
     "C": {"X": 1+6,"Y": 2+0, "Z": 3+3}
     }
 
-def calcular_total_puntos(puntos):
+def calculate_points(points):
     total = 0
     with open("day2.input") as f:
         for line in f:
             match = line.split()
-            total += puntos[match[0]][match[1]]
+            total += points[match[0]][match[1]]
     return total
 
-print(f"PARTE 1: total: {calcular_total_puntos(puntos)}")
+print(f"PART 1: total: {calculate_points(points)}")
 
 # --- Part Two ---
 # The Elf finishes helping with the tent and sneaks back over to you. "Anyway, the second column says how the round needs to end: X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win. Good luck!"
@@ -47,10 +47,10 @@ print(f"PARTE 1: total: {calcular_total_puntos(puntos)}")
 
 # Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
 
-puntos = {
+points = {
     "A": {"Y": 1+3,"Z": 2+6, "X": 3+0}, 
     "B": {"X": 1+0,"Y": 2+3, "Z": 3+6}, 
     "C": {"Z": 1+6,"X": 2+0, "Y": 3+3}
     }
 
-print(f"PARTE 2: total: {calcular_total_puntos(puntos)}")
+print(f"PART 2: total: {calculate_points(points)}")
