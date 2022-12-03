@@ -1,3 +1,5 @@
+# Day 1 solution is pretty nasty. Had a ton of thing done that day. Sorry for this haha.
+
 def part_a():
     with open("day1.input") as f:
         max_sum = 0
@@ -26,7 +28,6 @@ def part_b():
                 actual_sum = 0
             else:
                 actual_sum += int(line)
-        print(f"sums: {sums}")
         sums.sort()
         sums.reverse()
         print(f"sums sorted: {sums}")
